@@ -1,0 +1,14 @@
+# 6G IoT Federated Learning Dataset - Attribute Description
+
+1. **Record_ID**: Unique identifier for the data point.
+2. **Client_ID**: Edge device owning the data (Allocated via Dirichlet distribution seed=42 for non-IID).
+3. **Timestamp**: Time of data recording.
+4. **Device_Type**: Category of the IoT device (Wearable, Vehicle, etc.).
+5. **Battery_Level**: Remaining energy percentage (Critical for FL participation).
+6. **Signal_Strength_dBm**: 6G channel quality indicator [-120 to -50 dBm].
+7. **Latency_ms**: Network latency [5-200 ms], critical for 6G URLLC.
+8. **Data_Volume_MB**: Amount of local data available for training.
+9. **Local_Model_Accuracy**: Pre-aggregation accuracy of the local model.
+10. **Privacy_Budget_Used**: Cumulative epsilon consumed by the device.
+11. **User_Heart_Rate**: Sensitive health metric (Protected attribute) [40-180 bpm].
+12. **Location_X/Y**: Geo-spatial coordinates (Sensitive attribute) [0,1]^2.
