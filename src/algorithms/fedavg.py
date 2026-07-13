@@ -3,15 +3,13 @@ from .base import FederatedAlgorithm
 
 class FedAvg(FederatedAlgorithm):
     """
-    Vanilla Federated Averaging (McMahan et al., 2017).
-    Standard aggregation of model updates. 
-    No privacy mechanism.
+ 
     """
     def __init__(self, config):
         super().__init__("Vanilla FedAvg", config)
         
     def run_round(self, round_idx: int) -> dict:
-        # FedAvg Behavior: Good convergence, assumes IID-ish data.
+        
         return self._simulate_metrics(
             round_idx, 
             target_acc=84.5, 
