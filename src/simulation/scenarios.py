@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass
 class AlgorithmScenario:
-    """Defines the performance characteristics of an FL algorithm."""
+    """Charcatestics settings."""
     name: str
     target_accuracy: float
     convergence_rate: float
