@@ -14,8 +14,8 @@ from src.visualization.plots import Visualizer
 
 def main():
     print("=========================================")
-    print("   PQ-FL Comparative Analysis System   ")
-    print("   v1.0.2 - Enterprise Simulation Framework")
+    print("   Analysis    ")
+    print("   Run-")
     print("=========================================\n")
     
 
@@ -42,10 +42,8 @@ def main():
         json.dump(radar_data, f, indent=4)
         
     print(f"[SUCCESS] Simulation complete. Logs saved to {metrics_path}")
-    
-   
-  
-    print("\n[INFO] Performing Statistical Analysis (on Mean Accuracy)...")
+      
+    print("\n[INFO] Performing Statistical Analysis...")
     
    
     flat_metrics = {}
@@ -79,7 +77,7 @@ def main():
     viz.plot_radar_chart(radar_data)
     viz.plot_tradeoff_scatter(metrics_data, radar_data)
     
-    print("\n[COMPLETE] All tasks finished successfully.")
+    print("\n[COMPLETE] All Runs are now successful.")
 
 if __name__ == "__main__":
     main()
