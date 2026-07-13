@@ -9,7 +9,7 @@ import seaborn as sns
 from typing import Dict
 
 class Visualizer:
-    """Handles all plotting logic."""
+    """plotting."""
     
     def __init__(self, output_dir: str):
         self.output_dir = output_dir
@@ -30,7 +30,7 @@ class Visualizer:
     
     def _plot_metric_with_error_bars(self, metrics_data: Dict, metric_key: str, 
                                      title: str, ylabel: str, filename: str):
-        """Generic helper to plot any metric with Mean ± Std."""
+        """******"""
         
         plt.figure(figsize=(10, 6))
         
