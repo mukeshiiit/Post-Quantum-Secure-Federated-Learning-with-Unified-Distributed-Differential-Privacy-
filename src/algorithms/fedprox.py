@@ -3,14 +3,13 @@ from .base import FederatedAlgorithm
 
 class FedProx(FederatedAlgorithm):
     """
-    FedProx (Li et al., 2020).
-    Adds a proximal term to the local objective to handle heterogeneity.
+  
     """
     def __init__(self, config):
         super().__init__("FedProx", config)
         
     def run_round(self, round_idx: int) -> dict:
-        # FedProx Behavior: Slower convergence.
+
         return self._simulate_metrics(
             round_idx, 
             target_acc=86.2, 
