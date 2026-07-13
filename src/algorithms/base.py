@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 import numpy as np
 
 class FederatedAlgorithm(ABC):
-    """Abstract Base Class for all Federated Learning Algorithms."""
+    """Start here."""
     
     def __init__(self, name: str, config):
         self.name = name
@@ -25,10 +25,10 @@ class FederatedAlgorithm(ABC):
     
     def _simulate_metrics(self, round_idx: int, target_acc: float, rate: float, midpoint: int, noise_level: float) -> dict:
         """
-        Simulates all 4 metrics based on the target accuracy curve.
+        Simulates metrics.
         """
         # 1. Accuracy (Logistic Growth)
-        # Base logistic curve: L / (1 + exp(-k(x-x0)))
+      
         x0 = midpoint
         k = rate
         L = target_acc
@@ -37,19 +37,17 @@ class FederatedAlgorithm(ABC):
         noise = np.random.normal(0, noise_level)
         final_acc = max(0.0, min(100.0, base_acc + noise))
         
-        # 2. F1 Score (Correlated with Accuracy, usually slightly lower in imbalanced, but here we track)
+        # 2. F1 Score
         # Simulating F1 as (Accuracy / 100) * 0.95 + noise
         f1_score = (final_acc / 100.0) * 0.98 - np.random.uniform(0, 0.02)
         f1_score = max(0.0, min(1.0, f1_score))
         
-        # 3. AUC (Area Under Curve) - High performance models have high AUC
-        # Simulating AUC as slightly higher than accuracy ratio
+        # 3. AUC
+        
         auc_score = (final_acc / 100.0) + 0.02 - np.random.uniform(0, 0.01)
         auc_score = max(0.5, min(1.0, auc_score))
         
-        # 4. MAE (Mean Absolute Error) - Inversely proportional to Accuracy
-        # MAE starts high (e.g., 0.5) and drops to low (e.g., 0.05)
-        # loss_curve = 1.0 - (accuracy / 100)
+        # 4. MAE
         mae = (100.0 - final_acc) / 100.0 * 0.5 + np.random.uniform(0, 0.01)
         
         return {
@@ -61,7 +59,7 @@ class FederatedAlgorithm(ABC):
 
 class GenericAlgorithm(FederatedAlgorithm):
     """
-    Data-Driven Algorithm using a Scenario object.
+    .
     """
     def __init__(self, config, scenario):
         super().__init__(scenario.name, config)
