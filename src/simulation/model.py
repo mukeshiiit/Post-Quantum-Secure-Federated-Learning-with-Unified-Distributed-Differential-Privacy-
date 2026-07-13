@@ -3,14 +3,7 @@ import torch.nn as nn
 
 class PQFL_MLP(nn.Module):
     """
-    Two-hidden-layer Multilayer Perceptron (MLP) for PQ-FL simulation.
-    Described in Section 6.1.1 of the manuscript.
-    
-    Architecture:
-      - Input Layer: 7 dimensions
-      - Hidden Layer 1: 128 units, ReLU activation
-      - Hidden Layer 2: 64 units, ReLU activation
-      - Output Layer: 4 classes, Softmax activation
+   Patrameters setting
     """
     def __init__(self, input_dim=7, hidden1=128, hidden2=64, num_classes=4):
         super(PQFL_MLP, self).__init__()
@@ -25,25 +18,13 @@ class PQFL_MLP(nn.Module):
         x = self.relu2(self.fc2(x))
         x = self.fc3(x)
         return x
-
 def verify_parameter_count():
     model = PQFL_MLP()
     total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    
     print("=========================================")
-    print("      Neural Network Architecture        ")
+    print("      NN Setting        ")
     print("=========================================")
-    print(model)
-    print("-----------------------------------------")
-    print(f"Calculated Total Parameters : {total_params}")
-    print(f"Manuscript Target Parameters: 9540")
-    print("-----------------------------------------")
-    
-    if total_params == 9540:
-        print("[SUCCESS] Parameter count matches manuscript exactly!")
-    else:
-        print("[ERROR] Parameter count mismatch!")
-        
+    print(model)       
     return total_params
 
 if __name__ == "__main__":
