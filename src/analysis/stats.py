@@ -6,14 +6,14 @@ from scipy import stats
 from typing import Dict, List
 
 class StatisticalAnalyzer:
-    """ statistical validation of simulation results."""
+    """ statistical outputs."""
     
     def __init__(self, metrics_data: Dict):
         self.data = metrics_data
         
     def compare_algorithms(self, algo_a: str, algo_b: str, last_n_rounds: int = 50) -> Dict:
         """
-        Compares two algorithms using T-test and Cohen's d on the final N rounds.
+      
         """
         if algo_a not in self.data or algo_b not in self.data:
             raise ValueError(f"Algorithms {algo_a} or {algo_b} not found in data.")
@@ -41,7 +41,7 @@ class StatisticalAnalyzer:
         }
 
     def generate_report(self, comparisons: List[tuple]) -> str:
-        """Generates a formatted text report and a summary table for multiple comparisons."""
+        """ Results."""
         lines = []
         lines.append("Statistical Significance Report")
         lines.append("=============================\n")
