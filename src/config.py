@@ -5,11 +5,11 @@ from typing import List, Dict
 
 @dataclass
 class SimulationConfig:
-    """Configuration for the Federated Learning Simulation."""
+    """Configuration settings."""
     
     # General diverse settings
     NUM_ROUNDS: int = 200
-    NUM_SEEDS: int = 5  # For generating Error Bars
+    NUM_SEEDS: int = 5  
     seed: int = 42
     
     # Output paths
