@@ -3,11 +3,7 @@ from .base import FederatedAlgorithm
 
 class PQFL(FederatedAlgorithm):
     """
-    PQ-FL (Proposed).
-    Features:
-    - Post-Quantum Cryptography (Lattice-based)
-    - Secure Aggregation (Masking)
-    - Distributed Differential Privacy
+
     """
     def __init__(self, config):
         super().__init__("PQ-FL", config)
