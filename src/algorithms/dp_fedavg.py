@@ -3,15 +3,13 @@ from .base import FederatedAlgorithm
 
 class DPFedAvg(FederatedAlgorithm):
     """
-    Differentially Private FedAvg (Geyer et al., 2017).
-    Adds noise to client updates for privacy.
-    Values: epsilon=2.0, delta=1e-5
+   
     """
     def __init__(self, config):
         super().__init__("DP-FedAvg", config)
         
     def run_round(self, round_idx: int) -> dict:
-        # DP-FedAvg Behavior: Privacy noise degrades accuracy significantly.
+        
         return self._simulate_metrics(
             round_idx, 
             target_acc=74.0, 
