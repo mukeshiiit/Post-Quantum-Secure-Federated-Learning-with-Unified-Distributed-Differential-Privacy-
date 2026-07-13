@@ -10,14 +10,14 @@ from src.algorithms.base import GenericAlgorithm
 from src.simulation.scenarios import ScenarioRegistry
 
 class SimulationEngine:
-    """Engine to simulate Federated Learning training processes with Error Bars."""
+    """Engine ."""
     
     def __init__(self, config: SimulationConfig):
         self.config = config
         self.scenarios = ScenarioRegistry.get_scenarios()
         
     def _init_algorithms(self) -> Dict:
-        """Dynamically initializes algorithms from Scenarios."""
+        """algorithms from Scenarios."""
         algos = {}
         for name, scenario in self.scenarios.items():
             algos[name] = GenericAlgorithm(self.config, scenario)
@@ -107,7 +107,7 @@ class SimulationEngine:
     def _generate_fairness_table(self, algos):
         
         # Fairness = Accuracy / max(Accuracy) * Privacy_Score
-        # This is a synthetic metric for the table
+    
         results = []
         for name in algos:
             scenario = self.scenarios[name]
@@ -124,8 +124,7 @@ class SimulationEngine:
 
     def _generate_overhead_table(self, algos):
        
-        # Simulating overhead based on comp_efficiency
-        # Lower efficiency = Higher overhead (ms per round)
+      
         results = []
         base_overhead = 50 # ms
         
@@ -145,7 +144,7 @@ class SimulationEngine:
         print("[SUCCESS] Overhead Metrics generated.")
 
     def extract_radar_metrics(self) -> Dict:
-        """Extracts static metrics from algorithm instances."""
+
         algos = self._init_algorithms()
         
         labels = ['Test Accuracy', 'Privacy Security', 'Robustness', 'Comm. Efficiency', 'Client Comp. Speed']
