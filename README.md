@@ -1,6 +1,5 @@
 # PQ-FL Simulation
-
-Python simulation comparing federated learning algorithms with metrics, plots, and supplementary CSV exports.
+simulation Code
 
 ## Run
 
@@ -16,4 +15,4 @@ Outputs are written to `results/` and `Supplementary_Data_Sheet/`.
 Copyright (c) 2026 Dr. Dr. Mukesh Mann and Dr. Rakesh P. Badoni
 
 All rights reserved.  
-This software may not be used, copied, modified, or distributed without prior written permission from the above-mentioned authors.
+This Simulation script may not be used, copied, modified, or distributed without prior written permission from the above-mentioned authors.
