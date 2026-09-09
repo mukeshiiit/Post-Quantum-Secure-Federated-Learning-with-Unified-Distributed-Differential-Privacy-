@@ -1,0 +1,32 @@
+================================================================================
+           Rényi Differential Privacy (RDP) Accounting Report                   
+================================================================================
+Protocol Parameters:
+  - Total Communication Rounds (T) : 200
+  - Client Subsampling Ratio (q)   : 0.1 (10 active / 100 total)
+  - Failure Probability (delta)    : 1.0e-05
+--------------------------------------------------------------------------------
+
+[1] PQ-FL (Proposed - Distributed Differential Privacy):
+    - Noise multiplier (effective aggregate sigma) : 1.0
+    - Optimal Renyi order alpha*                   : 4.39
+    - Composed privacy budget epsilon              : 7.79 (approx. 8.0)
+    - Formal guarantee                             : (epsilon approx. 7.8, delta = 1.0e-05)-DP
+
+[2] DP-FedAvg (Baseline - Independent Per-Client Noise):
+    - Per-client noise multiplier sigma            : 1.0
+    - Active participating clients (n)             : 10
+    - Aggregate noise variance at server           : 10 * sigma^2 (n-fold excess)
+    - Composed privacy budget epsilon              : 0.78 (approx. 0.77)
+    - Formal guarantee                             : (epsilon approx. 0.78, delta = 1.0e-05)-DP
+    - Note: The 14.43 pp accuracy gap over DP-FedAvg reflects this difference
+            in effective perturbation (0.77 vs. 8.0), not equal-privacy advantage.
+
+[3] Privacy Budget Sensitivity Analysis (Reviewer 4, Comment 2):
+    | Target Epsilon  | Noise Multiplier (sigma) | Optimal alpha | Computed Epsilon | Projected Accuracy |
+    |-----------------|--------------------------|---------------|------------------|--------------------|
+    | epsilon approx. 8.0 | 1.0                      | 4.39          | 7.79             | 88.10% (Evaluated) |
+    | epsilon approx. 4.0 | 2.0                      | 7.79          | 3.64             | 82% - 84% (Projected) |
+    | epsilon approx. 2.0 | 4.0                      | 14.60         | 1.76             | 76% - 79% (Projected) |
+
+================================================================================

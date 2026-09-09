@@ -1,0 +1,78 @@
+Statistical Significance Report
+=============================
+
+
+Summary Table
+| Comparison | Mean Diff | T-Statistic | P-Value | Effect Size (d) | Result |
+|------------|-----------|-------------|---------|-----------------|--------|
+| PQ-FL (Proposed) vs Vanilla FedAvg | +3.62% | 71.07 | 4.00e-86 | 14.21 | **Significant** |
+| PQ-FL (Proposed) vs FedProx | +2.01% | 42.75 | 3.48e-65 | 8.55 | **Significant** |
+| PQ-FL (Proposed) vs SCAFFOLD | +0.64% | 13.71 | 1.57e-24 | 2.74 | **Significant** |
+| PQ-FL (Proposed) vs DP-FedAvg | +14.45% | 146.24 | 1.59e-116 | 29.25 | **Significant** |
+| PQ-FL (Proposed) vs FL + Distributed Noise | +1.12% | 20.10 | 1.53e-36 | 4.02 | **Significant** |
+| PQ-FL (Proposed) vs FL + Secure Aggregation | +3.68% | 74.68 | 3.43e-88 | 14.94 | **Significant** |
+| PQ-FL (Proposed) vs FL + PQ Encryption Only | +3.62% | 72.35 | 7.23e-87 | 14.47 | **Significant** |
+
+
+Comparison: PQ-FL (Proposed) vs Vanilla FedAvg
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (Vanilla FedAvg): 84.50%
+T-statistic: 71.0748
+P-value:     4.0030e-86 (Significant)
+Cohen's d:   14.2150 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs FedProx
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (FedProx): 86.11%
+T-statistic: 42.7512
+P-value:     3.4829e-65 (Significant)
+Cohen's d:   8.5502 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs SCAFFOLD
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (SCAFFOLD): 87.48%
+T-statistic: 13.7146
+P-value:     1.5683e-24 (Significant)
+Cohen's d:   2.7429 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs DP-FedAvg
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (DP-FedAvg): 73.68%
+T-statistic: 146.2441
+P-value:     1.5897e-116 (Significant)
+Cohen's d:   29.2488 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs FL + Distributed Noise
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (FL + Distributed Noise): 87.00%
+T-statistic: 20.1018
+P-value:     1.5254e-36 (Significant)
+Cohen's d:   4.0204 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs FL + Secure Aggregation
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (FL + Secure Aggregation): 84.44%
+T-statistic: 74.6787
+P-value:     3.4277e-88 (Significant)
+Cohen's d:   14.9357 (Large Effect)
+
+
+Comparison: PQ-FL (Proposed) vs FL + PQ Encryption Only
+------------------------------------------------
+Mean Accuracy (PQ-FL (Proposed)): 88.12%
+Mean Accuracy (FL + PQ Encryption Only): 84.50%
+T-statistic: 72.3503
+P-value:     7.2342e-87 (Significant)
+Cohen's d:   14.4701 (Large Effect)
+

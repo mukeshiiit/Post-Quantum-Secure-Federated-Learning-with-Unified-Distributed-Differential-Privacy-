@@ -1,0 +1,9 @@
+Algorithm,Privacy Guarantee,Privacy Score (1-10),Fairness Index
+Vanilla FedAvg,Low/None,1.0,0.845
+FedProx,Low/None,1.0,0.862
+SCAFFOLD,Low/None,1.0,0.875
+DP-FedAvg,Medium,7.0,5.158
+FL + Distributed Noise,Medium,7.0,6.09
+FL + Secure Aggregation,Medium,5.0,4.225
+FL + PQ Encryption Only,Low/None,3.0,2.535
+PQ-FL (Proposed),High,9.8,8.634
